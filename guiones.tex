@@ -1,0 +1,46 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Parte Sandra
+El funcionamiento celular depende de interacciones complejas entre genes, proteínas, mRNAs y metabolitos, tratándose de una red compleja. De ella se pueden extraer módulos funcionales más pequeños que se pueden estudiar mejor y combinar posteriormente para ampliar la complejidad del sistema. 
+Con esta premisa, el artículo escoge un módulo genético autorregulado del phago lambda de una forma integral, combinando métodos experimentales con modelos teóricos para poder crear así un modelo cuantitativo.
+
+La red de autorregulación del phago lambda controla el ciclo de vida viral regulando la expresión de los genes cI y cro. El aislamiento del OR y cI genera la autorregulación.
+
+El módulo escogido por el artículo es el que se ve aquí (fig 1A). El promotor está dividido en tres regiones y a continuación se encuentra el gen cI. El producto es una proteína que dimeriza. Cuando se une al primer sitio de unión en el operón, no se cambia la expresión de la proteína. Al unirse al segundo, la expresión aumenta, pero cuando se une al tercero y el promotor está completamente bloqueado, no hay expresión.
+
+Para estudiar esto se generaron tres plásmidos principales. Se utilizaron dos genes, cI wild-type termoestable y cI857 termosensible, aunque la diferencia entre ambos se debe seguir explorando.
+
+El plásmido pTOR2G sirve como control, no tienen ningún gen cI, sólo gfpmut3. Este gen expresa GFP y permite así determinar la tasa de expresión basal del promotor, sirviendo como medida cuantitativa experimental.
+
+El plásmido pT202b es otro control que tiene tanto cI wild-type como gfpmut3, siendo así termoestable. 
+
+El plásmido pT2002b es igual que el anterior, pero con el gen cI857 termosensible.
+
+%Plásmido pMTRCG: control positivo, promotor constitutivo que expresa gfpmut3
+
+Cambiando la temperatura, se ajustó la estabilidad de la proteína represora y variar así el grado de activación para examinar la dinámica de expresión del feedback loop positivo. 
+Con pT2002b, según sube la temperatura, con 39º el represor se desestabiliza, mostrando así dos poblaciones estables (biestabilidad) hasta llegar a los 40º, donde se vuelve a una sola población.
+Mismo experimento con pT202b, al tener cI wild-type no termosensible, se mantuvo en un estado monoestable a lo largo de todo el rango de temperaturas. Esto indica que la desestabilización del represor es el responsable de la biestabilidad. 
+
+
+Parte Dani
+
+
+Parte Claudia: Comparación modelo-experimento + Conclusiones
+- Figura 2: en esta imagen vemos en la parte de arriba los histogramas de fluorescencia de GFP obtenidos de manera experimental al cambiar la temperatura de 36-42ºC y los histogramas de GFP y cI (represor lambda) generados por el modelo para distintos valores crecientes de la tasa de desestabilización (γ_x). 0bservamos que los resultados experimentales coinciden bastante bien con lo predicho por el modelo. Además, cuando aparece la biestabilidad vemos que la distribución de ambas poblaciones se solapa indicando que la transición entre estados ocurre de manera muy rápida. (Figura 3) Esto lo predice el modelo: la transición de una célula de un estado a otro ocurre en escalas de tiempo menores que la división celular.
+- Figura 4: si nos centramos en los valores medios de GFP experimentales y teóricos, observamos que su distribución es prácticamente idéntica. Al inicio del experimento, vemos un pequeño aumento de la concentración de GFP. En el estado de equilibrio, la concentración [GFP] =  γ_x/(γ_g  ) [cI], de manera que, al principio del experimento, justo al aumentar la temperatura existe un pequeño desfase entre la γ_x y la concentración de cI que hace que aumente GFP. Este pequeño aumento de GFP va seguido del régimen de biestabilidad y finalmente al aumentar mucho  γ_x vuelve a aparecer un régimen monoestable en el que la cantidad de GFP sintetizada es basal.
+- Quisieron comprobar si este sistema presentaba histéresis, para ello repitieron el experimento al revés de 43-36ºC y observaron que se producía el régimen de biestabilidad a la misma temperatura que en el experimento original, lo que demuestraba que no había histéresis. Esto se debe a que el propio ruido es tan fuerte que es capaz de hacer que las células cambien de un estado a otro en escalas de tiempo inferiores al tiempo de incubación para cada temperatura. Además, el modelo determinista sí que predecía histéresis en este sistema, lo que indica la importancia que tiene el ruido en la regulación génica y en la transición de un estado a otro.
+- Además, quisieron comparar de manera cuantitativa la diferencia en la expresión génica de GFP en función de la temperatura/γ_x  en el modelo versus el experimento. Para cuantificar la variabilidad relativa en cada caso, utilizaron el coeficiente de variación (CV). Las gráficas obtenidas en cada caso son prácticamente iguales y tienen forma de S. 
+	Zona estado-alto donde CV es bajo: muchas moléculas en el estado alto 
+	Zona de biestabilidad: CV empieza a aumentar, tenemos una parte de la población en el estado alto y la otra en el bajo. De modo que el CV en la zona de transición se correlaciona con una media ponderada de dos estados.
+	Zona estado-bajo: el CV alcanza su valor máximo y comienza a disminuir aunque mantiene unos valores superiores a los de la primera zona. En el estado bajo existe un menor número de moléculas de manera que el ruido genera una mayor dispersión, que se traduce en un mayor CV.
+	
+CONCLUSIONES:
+	Es necesario incluir ruido en el modelo para poder representar de manera precisa el comportamiento del módulo autorregulador. En este caso, hemos podido comprobar tanto de manera teórica y experimental como fluctuaciones en el número de moléculas, debidas a la naturaleza aleatoria de las reacciones químicas, son las responsables de los cambios en la expresión génica y de las transiciones entre estados. 
+	La importancia de evaluar la estabilidad de los estados y sus posibles implicaciones en el fenotipo resultante.
+	Aunque el modelo ha sido capaz de predecir con éxito el funcionamiento del módulo; es necesario validarlo de manera experimental
+	En este estudio se demuestra cómo un enfoque integrado, que combina una red génica autorreguladora aislada y un modelo cuantitativo, puede utilizarse para elucidar propiedades clave de un módulo funcional común. Un enfoque combinado teórico y experimental de este tipo puede ser una herramienta valiosa para resolver la complejidad de las redes reguladoras de genes a gran escala.
+
+Parte Tania
+
+
+
+
