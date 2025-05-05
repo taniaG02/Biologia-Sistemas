@@ -63,3 +63,137 @@ Este artículo ha demostrado que es posible predecir la expresión génica con u
 %¿Qué desafíos siguen abiertos respecto a la predicción de expresión génica?
 
 \end{document}
+
+
+
+########################## Tania #############
+#### Version 1
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\title{Artículo de perspectiva}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Resumen}
+Isaacs et al. aislaron y cuantificaron un módulo de autorregulación positiva extraído del operador derecho (OR) del fago λ en \textit{E. coli}. Mediante un bucle de realimentación positiva en el que la proteína represora λ mutada (cI857) activa su propia transcripción junto a un gen reportero GFP, midieron por citometría de flujo la distribución de fluorescencia celular a distintas temperaturas. Se estableció un modelo determinista, el cual predijo la aparición de bistabilidad (dos estados estables de expresión) al aumentar la tasa de desnaturalización térmica de cI857. No obstante, este modelo también predice histéresis, lo cual no se observó experimentalmente. Esto se resolvió mediante la incorporación de ruido intrínseco (modelo estocástico, Langevin). Este segundo modelo reprodujo cuantitativamente los histogramas, la media y el coeficiente de variación observados experimentalmente.
+
+\section*{Perspectiva y contexto}
+\subsection*{Módulos genéticos como “ladrillos” de redes}
+Hartwell et al. propusieron que las redes regulatorias pueden entenderse como ensamblajes de “módulos” funcionales (feedback, feed forward, etc.) cuya caracterización aislada facilita la predicción de comportamientos complejos en redes mayores. El trabajo de Isaacs et al. ejemplifica este enfoque “bottom up”: extraer un motivo de realimentación positiva y someterlo a escrutinio cuantitativo, antes de reinsertarlo en arquitecturas mayores.
+
+\subsection*{Bistabilidad y control de ruido}
+La biestabilidad (capacidad de un sistema para permanecer en dos estados estables) es algo distintivo de la realimentación positiva. El estudio demuestra no sólo la bifurcación teórica, sino que el “ruido” inherente a bajos números de moléculas es suficiente para inducir transiciones entre estados sin necesidad de fluctuaciones externas. Esto conecta con trabajos de Elowitz \& Leibler (2000) sobre ruido intrínseco/extrínseco en expresión génica, y subraya la función dual del ruido: a menudo considerado perturbador, aquí es un motor de cambio de estado programado.
+
+\subsection*{Modelado híbrido: determinista más estocástico}
+La integración de un modelo determinista (bifurcación de puntos fijos) con términos de ruido tipo Langevin permitió reproducir histogramas de fluorescencia, medias y coeficientes de variación sin ajustar artificiosamente un “parámetro de ruido”. Este enfoque es un precedente de las actuales prácticas en biología de sistemas, donde se combinan simulaciones de reacciones discretas (Gillespie) con análisis continuo para capturar fenómenos multiescala.
+
+\subsection*{Implicaciones para diseño de circuitos sintéticos}
+En biocomputación y diseño de circuitos sintéticos, disponer de módulos bien caracterizados—conocidos sus parámetros bioquímicos y su respuesta al ruido—es esencial para construir comportamientos lógicos fiables. El autoregulador de Isaacs et al. funciona como un “bit” biológico con dos estados legibles por fluorescencia, sentando bases para switches, memorias y osciladores de nueva generación.
+
+\section*{Retos y futuras direcciones}
+\begin{itemize}
+    \item Medición dinámica en una sola célula. El artículo predice transiciones rápidas entre estados (Fig. 3A) que el muestreo por citometría (poblacional) no resuelve temporalmente. Técnicas de microfluídica y microscopía de célula viva podrían cuantificar las tasas de conmutación en tiempo real.
+    \item Efecto del contexto genómico. Aquí el módulo está en un plásmido de alta copia; su comportamiento podría diferir a baja copia génomica o en presencia de otros factores (p. ej. Cro). Explorar distintos “contextos” cuantitativamente ayudaría a entender la robustez modular.
+    \item Ruido extrínseco y acoplamientos múltiples. ¿Cómo se comporta este módulo cuando se conecta a otros—por ejemplo un lazo de realimentación negativa—o bajo variabilidad en el crecimiento celular? Extender el modelo para incluir ruido extrínseco (tasa de transcripción, variaciones de plásmido) ampliaría su aplicabilidad.
+\end{itemize}
+
+\section*{Conclusión}
+Isaacs et al. ofrecen un caso de estudio paradigmático de cómo aunar teoría y experimento para desentrañar la física de un módulo genético. Más allá de demostrar bistabilidad, revelan el rol constructivo del ruido molecular y proveen un “ladrillo” cuantificado para ingeniería de redes sintéticas. La perspectiva futura pasa por caracterizar dinámicas de conmutación a nivel unicelular, evaluar efectos de contexto y explorar acoplamientos modulares, avanzando hacia el objetivo de diseñar redes de regulación génica con precisión predictiva.
+
+\section*{Referencias clave}
+\begin{itemize}
+    \item Hartwell LH, et al. Modular cell biology. Nature 402, C47–C51 (1999).
+    \item Elowitz MB \& Leibler S. A synthetic oscillatory network of transcriptional regulators. Nature 403, 335–338 (2000).
+    \item Siemering KR, et al. Maturation of fluorescent protein mutants. Curr. Biol. 6, 1653–1663 (1996).
+\end{itemize}
+
+\end{document}
+
+
+#### Version 2
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\title{Artículo de perspectiva 2}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Módulos Autorreguladores y el Futuro del Diseño de Circuitos Genéticos}
+Inspirado en Isaacs et al. (PNAS, 2003) y en el marco de la biología de sistemas
+
+\section*{Resumen}
+El estudio de Isaacs et al. (2003) sobre un módulo genético autorregulador derivado del bacteriófago λ subraya la importancia de integrar modelos cuantitativos y experimentos para desentrañar la dinámica de redes biológicas. Su enfoque en la biestabilidad inducida por retroalimentación positiva, mediada por la desestabilización térmica del represor cI857, ofrece \textit{insights} críticos sobre cómo el ruido molecular y la arquitectura de circuitos influyen en las decisiones celulares. Esta perspectiva sitúa sus hallazgos en el contexto de la biología sintética y la modularidad de redes, destacando avances, limitaciones y oportunidades futuras.
+
+\section*{Contribuciones clave y contextualización}
+\subsection*{Biestabilidad y ruido interno}
+Isaacs et al. demostraron que la desestabilización proteica (vía temperatura) activa un régimen biestable en un circuito de retroalimentación positiva, validando predicciones teóricas mediante mediciones estocásticas a nivel de célula única. Este trabajo refuerza la idea de que el ruido intrínseco, lejos de ser un artefacto, es un componente funcional en sistemas biológicos, capaz de impulsar transiciones entre estados estables (ej., diferenciación celular o patologías como el cáncer).
+
+\subsection*{Modelado Cuantitativo Predictivo}
+La integración de parámetros bioquímicos conocidos (afinidad de unión a operadores, tasas de dimerización) en un modelo estocástico permitió una comparación rigurosa con datos experimentales. Este enfoque resalta la necesidad de modelos mecanicistas para predecir comportamientos emergentes en biología sintética.
+
+\subsection*{Modularidad en Redes Biológicas}
+Al aislar un módulo autorregulador de una red natural (fago λ), el estudio ilustra cómo la disección de subsistemas facilita su caracterización y posterior reintegración en redes complejas. Esto alinea con visiones modernas de la biología de sistemas, donde la modularidad es clave para entender y diseñar funciones celulares (Kitano, 2002; Cell).
+
+\section*{Limitaciones y Desafíos}
+\subsection*{Escalabilidad}
+Mientras que módulos aislados son manejables, su acoplamiento en redes multicapa (ej., interacciones metabolismo-transcripción) introduce no linealidades impredecibles.
+
+\subsection*{Contexto Celular}
+El estudio usó plásmidos de alto número de copias, pero en sistemas genómicos nativos (copias únicas), el ruido y la dinámica podrían variar significativamente.
+
+\subsection*{Aplicaciones In Vivo}
+La dependencia de la temperatura como interruptor limita su uso en organismos homeotérmicos. Alternativas (moléculas pequeñas, luz) requieren exploración.
+
+\section*{Direcciones Futuras}
+\subsection*{Ingeniería de Circuitos Robustos}
+Diseñar módulos autorreguladores que amortigüen o amplifiquen ruido según el contexto (ej., biosensores o terapias celulares).
+
+\subsection*{Integración con Otras Plataformas}
+Combinar retroalimentación positiva/negativa y acoplar módulos a osciladores (ej., relojes circadianos sintéticos).
+
+\subsection*{Herramientas de Modelado Multiescala}
+Desarrollar algoritmos que conecten dinámicas estocásticas a nivel molecular con comportamientos tisulares.
+
+\section*{Figuras Sugeridas}
+\begin{itemize}
+    \item Figura 1: Arquitectura del Módulo Autorregulador y Bistabilidad
+    \begin{itemize}
+        \item Esquema del circuito de retroalimentación positiva (gen cI857, promotor P₆M, GFP).
+        \item Gráfico de bifurcación mostrando estados estables (alto/bajo) en función de γₓ (tasa de desestabilización).
+        \item Comparación de histogramas experimentales vs. simulaciones estocásticas.
+    \end{itemize}
+    \item Figura 2: Ruido como Herramienta Funcional
+    \begin{itemize}
+        \item Diagrama conceptual del ruido intrínseco (fluctuaciones en número de moléculas) vs. extrínseco (variabilidad celular).
+        \item Ejemplos biológicos: diferenciación en \textit{Bacillus subtilis}, transiciones metastáticas en cáncer.
+    \end{itemize}
+    \item Figura 3: Modularidad en Biología de Sistemas
+    \begin{itemize}
+        \item Red natural del fago λ vs. módulo aislado.
+        \item Visión jerárquica: módulos → redes → funciones celulares (ej., motivos de red como retroalimentación, feed-forward).
+    \end{itemize}
+    \item Figura 4: Aplicaciones en Biología Sintética
+    \begin{itemize}
+        \item Diseño de interruptores térmicos/ópticos para controlar expresión génica.
+        \item Circuitos autorreguladores en terapia celular (ej., liberación de fármacos bajo umbrales de señal).
+    \end{itemize}
+\end{itemize}
+
+\section*{Conclusión}
+El trabajo de Isaacs et al. es un hito en la caracterización cuantitativa de módulos genéticos. Al vincular modelos estocásticos con datos experimentales, no solo valida principios teóricos, sino que también ofrece un marco para diseñar circuitos sintéticos con funciones predecibles. Futuros avances dependerán de superar desafíos de escalabilidad y contexto, aprovechando herramientas emergentes en edición genética y biocomputación.
+
+\end{document}
