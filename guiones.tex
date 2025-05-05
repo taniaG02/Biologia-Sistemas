@@ -27,6 +27,9 @@ Parte Determinista (Tania)
 Parte Estocástica (Dani)
 
 - Fórmula (explicar ruido y por qué se mete)
+Con el objetivo de que se puedan observar grandes fluctuaciones y la dinámica de expresión es necesario que exista ruido de ese modo se podrán captar la esencia del módulo autorregulador.
+Por ese motivo se utiliza la variación aleatoria en el tiempo (xi) de los eventos individuales de reacción bioquímica; lo cual se expresa con esta fórmula y puede simplificarse en estas dos (18 y 19).
+
 
 
 Parte Claudia: Comparación modelo-experimento + Conclusiones
@@ -46,12 +49,21 @@ CONCLUSIONES:
 
 Parte Dani:
 
-- Simulación 33
-	
-- Simulación 49
-	
-Conclusiones (anteriores)
+De las simulaciones que obtuvimos, dos fueron
 
+- Simulación 33: Un modelo que coincide con la figura 3B, en el cual se puede observar también que dentro de un ciclo celular, a escalas de tiempo menores ocurren transiciones de células de un estado a otro.
+	
+- Simulación 49: Intentamos obtener un modelo que reflejase la figura 4B pero que también permitiese comparar entre los modelos determinista y el estocástico. A pesar de que no hayamos podido conseguir que se vea reflejada la histeresis en el determinista ni la biestabilidad en el estocástico, puede observarse esa tendencia a una menor concentración de GFP a mayor temperatura y su diferente concentración en función del aumento o disminución de la temperatura.
+	
+
+Conclusiones (retocadas)
+	(En las simulaciones)
+	- Con ello podemos simular transiciones rápidas entre estados, relevantes en procesos como diferenciación celular o cáncer; además de una correcta tendencia en la concentración de GFP al aumentar la temperatura.
+	- También hemos podido confirmar la existencia de dos puntos de equilibrio estables para gamma_x = 3750 y 3800.
+	(En el artículo)
+	- En definitiva, es necesario incluir ruido en el modelo para poder representar de manera precisa el comportamiento del módulo autorregulador. En este caso, hemos podido comprobar tanto de manera teórica y experimental como fluctuaciones en el número de moléculas, debidas a la naturaleza aleatoria de las reacciones químicas, son las responsables de los cambios en la expresión génica y de las transiciones entre estados. 
+	- La importancia de evaluar la estabilidad de los estados y sus posibles implicaciones en el fenotipo resultante, de tal modo que, integrando modelos matemáticos y experimentos se pueden diseccionar módulos genéticos complejos (a pesar de la capacidad de predicción del modelo matemático, es necesario recalcar la necesidad de validarlo de manera experimental).
+	- En resumen, en este estudio se demuestra cómo un enfoque integrado, que combina una red génica autorreguladora aislada y un modelo cuantitativo, puede utilizarse para elucidar propiedades clave de un módulo funcional común. Un enfoque combinado teórico y experimental de este tipo puede ser una herramienta valiosa para resolver la complejidad de las redes reguladoras de genes a gran escala.
 
 
 
