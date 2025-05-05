@@ -44,3 +44,95 @@ Parte Tania
 
 
 
+###################################################
+##########ORGANIZACIÓN (propuesto pot Tania)#######
+###################################################
+
+1. Introducción (Sandra)
+Contexto (puntos a tratar)
+•	Las células regulan funciones mediante redes complejas de genes, proteínas y otros componentes.
+•	Estas redes pueden dividirse en módulos funcionales (ej.: retroalimentación positiva/negativa).
+•	Bistabilidad: Capacidad de un sistema de existir en dos estados estables bajo las mismas condiciones.
+•	Ej en el que se basan: El fago lambda usa retroalimentación positiva para decidir entre lisis (destruir célula) y lisogenia (integrarse en el ADN).
+
+Objetivo:
+- Demostrar experimentalmente la bistabilidad en un módulo autorregulador aislado del fago lambda.
+- Validar un modelo matemático que incorpora ruido interno en la expresión génica.
+
+2. Sistema Experimental (Sandra)
+Diseño del módulo genético:
+Genes clave:
+- cI857: Codifica un represor termo-sensible del fago lambda.
+- GFP: Proteína fluorescente para medir expresión génica.
+- Promotor Pₘ: Regula la expresión de cI857 y GFP.
+
+Mecanismo:
+- A bajas temperaturas, el represor cI857 es estable, activando su propia expresión (retroalimentación positiva).
+- Al aumentar la temperatura, el represor se desestabiliza, reduciendo su expresión.
+
+Controles: Plásmidos con cI silvestre (no termo-sensible) para confirmar que la bistabilidad depende de la desestabilización térmica.
+
+-----------------------------------------------------------------------
+
+3. Modelo Matemático (Tania/Dani)
+
+Modelo determinista:
+Mini-explicación de la deducción?
+Poner ecuaciones
+Explicar:
+-	Autorregulación positiva
+-	Terminios producción/degradación
+-	Dinámica de represores (cI) y GFP – biestabilidad, histéresis.
+-	Explicar parámetros – lo que significan (no linealidad)
+No linealidad: La función f(x,v)f(x,v) modela la activación/represión del promotor Pₘ al unirse represores a sitios operadores (OR1, OR2, OR3).
+
+Modelo estocástico:
+-	Añadimos ruido – decir porqué. 
+-	Como queda el modelo – biestabilidad, pero no histéresis (lo que cuadra con lo experimental)
+
+Simulaciones (lo que hayamos conseguido)
+Biestabilidad: El modelo predice dos estados estables (alto/bajo) para valores intermedios de γx – ¿?? No lo hemos coneguido
+Grafica que tenemos
+
+-----------------------------------------------------------------------
+
+4. Resultados Experimentales (Claudia)
+Evidencia de biestabilidad:
+- Distribuciones bimodales: A 39–40°C, se observan dos poblaciones de células (alta/baja expresión de GFP) (Fig. 1C y 2A).
+- Coeficiente de variación (Cv): Aumenta en la zona de transición, reflejando fluctuaciones entre estados (Fig. 4B).
+
+Ausencia de histéresis:
+No se observa dependencia de la dirección del barrido térmico, lo que sugiere que el ruido acelera las transiciones entre estados.
+
+Validación del modelo:
+Las simulaciones coinciden cuantitativamente con los datos experimentales (Fig. 2B y 2C).
+
+-----------------------------------------------------------------------
+
+5. Discusión/prespectivas futuras/dificultades que hemos encontrado
+Importancia del ruido:
+- Las fluctuaciones en moléculas pocas (ruido interno) son críticas para la dinámica del sistema.
+- Permiten transiciones rápidas entre estados, relevantes en procesos como diferenciación celular o cáncer.
+
+Aplicaciones: ¿?? quitar
+- Ingeniería de circuitos genéticos sintéticos con comportamientos predecibles.
+- Estudio de redes naturales (ej.: apoptosis, ciclo celular).
+
+6. Conclusiones
+•	La integración de modelos matemáticos y experimentos permite diseccionar módulos genéticos complejos.
+•	La bistabilidad surge de la retroalimentación positiva y el ruido interno, no solo de parámetros deterministas.
+•	Este enfoque "de abajo hacia arriba" es clave para entender redes biológicas a mayor escala.
+
+
+
+
+----------------------------------------------------------------------------
+Preguntas para la discusión 
+1.	¿Cómo afectaría reducir el número de copias del plásmido a la bistabilidad?
+En el artículo, mencionan que usaron plásmidos de alto número de copias (50-70 por célula). Si se reduce el número de copias, probablemente disminuiría la cantidad total de represores cI857 y GFP en la célula. Según el modelo matemático presentado, la síntesis de proteínas depende de parámetros como la tasa de producción basal (β) y el número de copias del plásmido (m). Si m disminuye, la función f(x, v) en las ecuaciones se vería afectada, reduciendo la producción de represores. Esto podría desplazar el sistema hacia un régimen donde la retroalimentación positiva no es suficiente para sostener la bistabilidad, llevando a un estado monostable. Además, al haber menos moléculas, el ruido interno (fluctuaciones estocásticas) aumentaría, lo que podría facilitar transiciones más frecuentes entre estados o incluso eliminar la distinción clara entre ellos. Sería interesante simular esto ajustando el parámetro m en el modelo y observando cómo cambian las distribuciones de expresión.
+2.	¿Qué implicaciones tiene la ausencia de histéresis en sistemas biológicos naturales?
+La ausencia de histéresis sugiere que el sistema no "recuerda" su estado anterior, permitiendo una transición rápida entre estados según las condiciones actuales. Esto es útil en entornos dinámicos donde la flexibilidad es clave (ej.: respuesta a estrés).
+En este estudio, el ruido estocástico dominó sobre efectos deterministas, enmascarando la histéresis. En sistemas naturales más complejos (con múltiples módulos interconectados), la histéresis podría reaparecer, proporcionando robustez frente a fluctuaciones.
+El fago lambda silvestre muestra histéresis debido a su red dual (cI y Cro), lo que resalta la importancia del contexto de red en el comportamiento emergente.
+3.	¿Podría aplicarse este modelo a otros sistemas de retroalimentación, como los que involucran ARN?
+El modelo actual se centra en la regulación por proteínas (represores que se unen a ADN). Para sistemas con ARN (por ejemplo, riboswitches o ARN no codificante que regula expresión génica), habría que adaptar las ecuaciones. En lugar de dimerización de proteínas y unión a operadores, se modelarían interacciones ARN-ARN o ARN-proteína. Además, la dinámica del ARN es más rápida (menor vida media) comparada con las proteínas, lo que podría requerir ajustar los parámetros de degradación (γ). Sin embargo, los principios básicos de retroalimentación y ruido interno seguirían siendo relevantes. Sería importante incluir términos que representen la síntesis y degradación de ARN, y posiblemente competencia por sitios de unión. Simular esto permitiría predecir si la bistabilidad emerge en tales sistemas y cómo el ruido afecta su comportamiento.
