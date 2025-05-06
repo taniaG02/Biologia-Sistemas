@@ -14,25 +14,34 @@
 \begin{document}
 \maketitle
 
-El estudio de Isaacs et al. (2003) muestra cómo la combinación entre métodos experimentales y simulaciones computacionales permiten conocer en profundidad la red de autorregulación del phago lambda.
+El estudio de Isaacs et al. (2003) muestra cómo la combinación entre métodos experimentales y simulaciones computacionales permiten conocer en profundidad la red de autorregulación del phago $\lambda$.
+
+%%Resumen:
+%El artículo de Isaacs et al. (2003) presenta un modelo cuantitativo de autorregulación positiva en E. coli, demostrando que el ruido molecular puede inducir bistabilidad y transiciones entre estados estables. Utilizando un circuito sintético basado en el represor cI857 del fago $\lambda$, los autores integran experimentos y simulaciones estocásticas para revelar la importancia del ruido intrínseco en la regulación génica. Este enfoque redefine la comprensión de la estabilidad y la plasticidad en sistemas biológicos, abriendo nuevas perspectivas para el diseño de circuitos sintéticos.
+En el estudio de Isaacs et al. se aisló y cuantificó un módulo de autorregulación positiva extraído del operador derecho (OR) del fago $\lambda$ en \textit{E. coli}. Mediante un bucle de realimentación positiva en el que la proteína represora $\lambda$ mutada (cI857) activa su propia transcripción junto a un gen reportero GFP, midieron por citometría de flujo la distribución de fluorescencia celular a distintas temperaturas. Se estableció un modelo determinista, el cual predijo la aparición de bistabilidad (dos estados estables de expresión) al aumentar la tasa de desnaturalización térmica de cI857. No obstante, este modelo también predice histéresis, lo cual no se observó experimentalmente. Esto se resolvió mediante la incorporación de ruido intrínseco (modelo estocástico, Langevin). Este segundo modelo reprodujo cuantitativamente los histogramas, la media y el coeficiente de variación observados experimentalmente.
 
 %%Contexto:
-La mayoría de las funciones celulares resultan de la interacción entre genes, proteínas, RNAs y metabolitos a través de redes de regulación (cita 1). Uno de los grandes desafíos de la biología de sistemas es ser capaz de deducir respuestas fenotípicas celulares a partir de la estructura y comportamiento de estas redes de interacción tan complejas. Estas pueden diseccionarse en módulos, unidades funcionales más sencillas, que facilitan su estudio. 
+La mayoría de las funciones celulares resultan de la interacción entre genes, proteínas, RNAs y metabolitos a través de redes de regulación (cita 1). Uno de los grandes desafíos de la biología de sistemas es ser capaz de deducir respuestas fenotípicas celulares a partir de la estructura y comportamiento de estas redes de interacción tan complejas. Estas pueden diseccionarse en módulos, unidades funcionales más sencillas (Hartwell et al), cuya caracterización aislada facilita la predicción de comportamientos complejos en redes mayores. El trabajo de Isaacs et al. ejemplifica este enfoque “bottom up”: extraer un motivo de realimentación positiva y someterlo a escrutinio cuantitativo, antes de reinsertarlo en arquitecturas mayores.
 %¿Qué se sabía antes sobre la predicción de la expresión génica a partir de la secuencia?
 %¿Qué limitaciones existían en los métodos anteriores?
 %¿Por qué es relevante volver a examinar esta relación?
 
 %%Contribución del estudio: 
+Este estudio muestra con un enfoque integrado el funcionamiento de una red génica autorregulada con un modelo cuantitativo y reduciendo la complejidad de las redes génicas a los componentes esenciales. Esta combinación de un enfoque teórico y experimental permite resolver la complejidad de las redes reguladoras de genes a gran escala, analizando los estados de expresión de genes y comprendiendo los patrones globales de expresión y evaluación de la letalidad génica.
+
+Isaacs et al. demostraron que la desestabilización proteica vía temperatura activa un régimen biestable en un circuito de retroalimentación positiva, validando predicciones teóricas mediante mediciones estocásticas a nivel de célula única. Este trabajo refuerza la idea de que el ruido intrínseco, lejos de ser un artefacto, es un componente funcional en sistemas biológicos, capaz de impulsar transiciones entre estados estables  sin necesidad de fluctuaciones externas. Esto conecta con trabajos de Elowitz \& Leibler (2000) sobre ruido intrínseco/extrínseco en expresión génica, y subraya la función dual del ruido: a menudo considerado perturbador, aquí es un motor de cambio de estado programado.
+
 %Uso de circuitos genéticos sintéticos con promotores diseñados racionalmente.
 %Desarrollo de un modelo cuantitativo que relaciona secuencia y expresión.
 %Prueba experimental en E. coli usando GFP como reportero.
-
-Este estudio muestra con un enfoque integrado el funcionamiento de una red génica autorregulada con un modelo cuantitativo y reduciendo la complejidad de las redes génicas a los componentes esenciales. Esta combinación de un enfoque teórico y experimental permite resolver la complejidad de las redes reguladoras de genes a gran escala, analizando los estados de expresión de genes y comprendiendo los patrones globales de expresión y evaluación de la letalidad génica.
 
 %%Aspectos técnicos y metodológicos:
 %Medición sistemática de niveles de fluorescencia para construir el modelo.
 %Ajuste del modelo con regresión lineal y evaluación de su predictibilidad.
 %Validación cruzada con nuevos promotores.
+
+La integración de parámetros bioquímicos conocidos (afinidad de unión a operadores, tasas de dimerización) en un modelo estocástico permitió una comparación rigurosa con datos experimentales. Este enfoque resalta la necesidad de modelos mecanicistas para predecir comportamientos emergentes en biología sintética.
+La integración de un modelo determinista (bifurcación de puntos fijos) con términos de ruido tipo Langevin permitió reproducir histogramas de fluorescencia, medias y coeficientes de variación sin ajustar artificiosamente un “parámetro de ruido”. Este enfoque es un precedente de las actuales prácticas en biología de sistemas, donde se combinan simulaciones de reacciones discretas (Gillespie) con análisis continuo para capturar fenómenos multiescala.
 
 Para los modelos experimentales se realizó una medición sistemática de niveles de GFP para la cuantificación de la expresión. Los resultados experimentales se utilizaron para ajustar un modelo con regresión lineal y evaluar su predictibilidad. 
 
@@ -69,19 +78,6 @@ Este artículo ha demostrado que es posible predecir la expresión génica con u
 
 ########################## Tania #############
 #### Version 1
-
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{graphicx}
-
-\title{Artículo de perspectiva}
-\author{}
-\date{}
-
-\begin{document}
-
-\maketitle
 
 \section*{Resumen}
 Isaacs et al. aislaron y cuantificaron un módulo de autorregulación positiva extraído del operador derecho (OR) del fago λ en \textit{E. coli}. Mediante un bucle de realimentación positiva en el que la proteína represora λ mutada (cI857) activa su propia transcripción junto a un gen reportero GFP, midieron por citometría de flujo la distribución de fluorescencia celular a distintas temperaturas. Se estableció un modelo determinista, el cual predijo la aparición de bistabilidad (dos estados estables de expresión) al aumentar la tasa de desnaturalización térmica de cI857. No obstante, este modelo también predice histéresis, lo cual no se observó experimentalmente. Esto se resolvió mediante la incorporación de ruido intrínseco (modelo estocástico, Langevin). Este segundo modelo reprodujo cuantitativamente los histogramas, la media y el coeficiente de variación observados experimentalmente.
