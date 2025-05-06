@@ -29,9 +29,16 @@ Parte Estocástica (Dani)
 - Fórmula (explicar ruido y por qué se mete)
 Estos modelos incorporan elementos de aleatoriedad, a diferencia de los modelos deterministas que son completamente predecibles. En el contexto de la regulación genética, esto probablemente se refiere a las fluctuaciones aleatorias en los niveles de proteínas o ARN debido a eventos moleculares discretos. 
 Con el objetivo de que se puedan observar grandes fluctuaciones y la dinámica de expresión es necesario que exista ruido de ese modo se podrán captar la esencia del módulo autorregulador.
+
+La magnitud del ruido depende de las tasas de producción y degradación (dentro de la raíz cuadrada) (a mayor producción (βf), mayor ruido).
+ξ(t) es Ruido blanco, un término matemático que representa fluctuaciones completamente aleatorias. Sus características son: 
+* Media cero: [No hay sesgo (las fluctuaciones son] igualmente probables hacia arriba o abajo). 
+* Varianza unitaria: [La intensidad del ruido] está normalizada. 
+* Sin correlación temporal: El valor de ξ(t) en un instante [no depende de valores pasados. Esto simplifica el modelo,] asumiendo que las reacciones ocurren en escalas de tiempo muy rápidas.
+
 Por ese motivo se utiliza la variación aleatoria en el tiempo (xi) de los eventos individuales de reacción bioquímica; lo cual se expresa con esta fórmula y puede simplificarse en estas dos (18 y 19).
-
-
+Esto explica por qué no se observa histéresis en este modelo: las transiciones aleatorias borran la memoria del estado anterior.
+[Cabe recalcar que el ruido no es un error, sino una propiedad inherente de sistemas con pocas moléculas. Su inclusión en modelos es crucial para predecir comportamientos realistas, como la variabilidad entre células individuales.]
 
 Parte Claudia: Comparación modelo-experimento + Conclusiones
 - Figura 2: en esta imagen vemos en la parte de arriba los histogramas de fluorescencia de GFP obtenidos de manera experimental al cambiar la temperatura de 36-42ºC y los histogramas de GFP y cI (represor lambda) generados por el modelo para distintos valores crecientes de la tasa de desestabilización (γ_x). 0bservamos que los resultados experimentales coinciden bastante bien con lo predicho por el modelo. Además, cuando aparece la biestabilidad vemos que la distribución de ambas poblaciones se solapa indicando que la transición entre estados ocurre de manera muy rápida. (Figura 3) Esto lo predice el modelo: la transición de una célula de un estado a otro ocurre en escalas de tiempo menores que la división celular.
@@ -52,9 +59,15 @@ Parte Dani:
 
 De las simulaciones que obtuvimos, dos fueron
 
-- Simulación 33: Un modelo que coincide con la figura 3B, en el cual se puede observar también que dentro de un ciclo celular, a escalas de tiempo menores ocurren transiciones de células de un estado a otro.
+- Simulación 33: Un modelo que coincide con la figura 3B, en el cual, como ha explicado Claudia previamente, se puede observar también que dentro de un ciclo celular, a escalas de tiempo menores ocurren transiciones de células de un estado a otro.
 	
-- Simulación 49: Intentamos obtener un modelo que reflejase la figura 4B pero que también permitiese comparar entre los modelos determinista y el estocástico. A pesar de que no hayamos podido conseguir que se vea reflejada la histeresis en el determinista ni la biestabilidad en el estocástico (ni una población en estabo bajo ni otra en el alto), puede observarse esa tendencia a una menor concentración de GFP a mayor temperatura (tienendo un papel en la desestabilización de GFP), es decir sí que hemos podido representar su influencia en la expresión génica y su diferente concentración en función del aumento o disminución de la temperatura.
+- Simulación 49: Intentamos obtener un modelo que reflejase la figura 4B pero que también permitiese comparar entre los modelos determinista y el estocástico. A pesar de que no hayamos podido conseguir que se vea reflejada la histeresis en el determinista ni la biestabilidad en el estocástico (ni una población en estado bajo ni otra en el alto), puede observarse esa tendencia a una menor concentración de GFP a mayor temperatura (teniendo un papel en la desestabilización de GFP), es decir sí que hemos podido representar su influencia en la expresión génica y su diferente concentración en función del aumento o disminución de la temperatura. 
+Lo ideal/el objetivo habría sido que se hubiese podido observar las líneas deterministas (azules) divergiendo al subir y bajar, mostrando histéresis, y las estocásticas (verdes) superponiéndose más, indicando menor histéresis. 
+Las limitaciones de nuestro código son:
+- Las simplificaciones: 
+	- No considera dilución por división celular (clave en el artículo) (seconsideró constante). 
+	- Asume GFP instantáneamente fluorescente (ignora tiempo de maduración). 
+- Escala de tiempo: Las simulaciones usan 50 unidades de tiempo, pero no se especifica su equivalencia a divisiones celulares (por lo que realmente nos hemos basado en el cambio de temperatura)
 	
 
 Conclusiones (retocadas)
