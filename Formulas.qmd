@@ -1,0 +1,94 @@
+---
+title: "Fórmulas"
+format: pdf 
+---
+
+# Fórmilas de Tania
+
+## Iniciales
+
+### Versiones con solo x en numerador (o nada)
+
+$d_0(x, v) = \frac{m}{1 + c \cdot \frac{x^2}{v^2} + \sigma_1 \cdot c^2 \cdot \frac{x^4}{v^4} + \sigma_1 \cdot \sigma_2 \cdot c^3 \cdot \frac{x^6}{v^6}}$
+
+$f(x, v) = d_0(x, v) \cdot (1 + c \cdot \frac{x^2}{v^2} + \alpha \cdot \sigma_1 \cdot c^2 \cdot \frac{x^4}{v^4})$
+
+$h(x, v) = 1 + 4 \cdot c_1 \cdot \frac{x}{v} + 4 \cdot c \cdot d_0(x, v) \cdot \frac{x}{v^2} + 16 \cdot \sigma_1 \cdot c^2 \cdot d_0(x, v) \cdot \frac{x^3}{v^4} + 36 \cdot \sigma_1 \cdot \sigma_2 \cdot c^3 \cdot d_0(x, v) \cdot \frac{x^5}{v^6}$
+
+
+#### Fórmula final de x
+
+$\dot{x} = \frac{1}{h(x, v)} \cdot (\beta \cdot f(x, v) - \gamma_x \cdot x)$
+
+
+
+### Versiones con todo en el numerador x en numerador (a mí me gustan más estas)
+
+$d_0(x, v) = \frac{m}{1 + \frac{c \cdot x^2}{v^2} + \sigma_1 \cdot \frac{c^2 \cdot x^4}{v^4} + \sigma_1 \cdot \sigma_2 \cdot \frac{c^3 \cdot x^6}{v^6}}$
+
+$f(x, v) = d_0(x, v) \cdot (1 + \frac{c \cdot x^2}{v^2} + \frac{\alpha \cdot \sigma_1 \cdot c^2 \cdot x^4}{v^4})$
+
+$h(x, v) = 1 + \frac{4 \cdot c_1 \cdot x}{v} + \frac{4 \cdot c \cdot x \cdot d_0(x, v)}{v^2} + \frac{16 \cdot \sigma_1 \cdot c^2 \cdot x^3 \cdot d_0(x, v)}{v^4} + \frac{36 \cdot \sigma_1 \cdot \sigma_2 \cdot c^3 \cdot x^5 \cdot d_0(x, v)}{v^6}$
+
+
+#### Fórmula final de x
+
+$\dot{x} = \frac{\beta \cdot f(x, v) - \gamma_x \cdot x}{h(x, v)}$
+
+
+
+### Fórmula final de g (lo del numerador a esta no le afecta)
+
+$\dot{g} = \eta \cdot \beta \cdot f(x, v) - \gamma_g \cdot g$
+
+
+### Fórmula del volumen
+
+$v = e^{\ln (2) \cdot t}$
+
+### Fórmula de la fluorescencia de GFP
+
+$F = c(\gamma_x) \cdot (g + b_0)$
+
+
+
+## Con w
+
+### Versiones con solo x en numerador (o nada)
+
+$d_0(x, v) = \frac{m}{1 + w + \sigma_1 \cdot w^2 + \sigma_1 \cdot \sigma_2 \cdot w^3}$
+
+$f(x, v) = d_0(x, v) \cdot (1 + w + \alpha \cdot \sigma_1 \cdot w^2 )$
+
+$h(x, v) = 1 + 4 \cdot c_1 \cdot \frac{x}{v} + 4 \cdot d_0(x, v) \cdot \frac{w}{x} + 16 \cdot \sigma_1 \cdot d_0(x, v) \cdot \frac{w^2}{x} + 36 \cdot \sigma_1 \cdot \sigma_2 \cdot d_0(x, v) \cdot \frac{w^3}{x}$
+
+
+
+### Versiones con todo en el numerador x en numerador (a mí me gustan más estas)
+
+$d_0(x, v) = \frac{m}{1 + w + \sigma_1 \cdot w^2 + \sigma_1 \cdot \sigma_2 \cdot w^3}$
+
+$f(x, v) = d_0(x, v) \cdot (1 + w + \alpha \cdot \sigma_1 \cdot w^2)$
+
+$h(x, v) = 1 + \frac{4 \cdot c_1 \cdot x}{v} + \frac{4 \cdot w \cdot d_0(x, v)}{x} + \frac{16 \cdot \sigma_1 \cdot w^2 \cdot d_0(x, v)}{x} + \frac{36 \cdot \sigma_1 \cdot \sigma_2 \cdot w^3 \cdot d_0(x, v)}{x}$
+
+
+
+## Con v = 1
+
+$d_0(x, v) = \frac{m}{1 + c \cdot x^2 + \sigma_1 \cdot c^2 \cdot x^4 + \sigma_1 \cdot \sigma_2 \cdot c^3 \cdot x^6}$
+
+$f(x, v) = d_0(x, v) \cdot (1 + c \cdot x^2 + \alpha \cdot \sigma_1 \cdot c^2 \cdot x^4)$
+
+$h(x, v) = 1 + 4 \cdot c_1 \cdot x + 4 \cdot c \cdot d_0(x, v) \cdot x + 16 \cdot \sigma_1 \cdot c^2 \cdot d_0(x, v) \cdot x^3 + 36 \cdot \sigma_1 \cdot \sigma_2 \cdot c^3 \cdot d_0(x, v) \cdot x^5$
+
+
+
+
+# Fórmulas de Dani
+
+$\dot{x} = \frac{\beta \cdot f(x, v) - \gamma_x \cdot x}{h(x, v)} + \sqrt{ \frac{\beta \cdot f(x, v) + \gamma_x \cdot x}{h(x, v)}} \cdot \xi(t)$
+
+$\dot{g} = \eta \cdot \beta \cdot f(x, v) - \gamma_g \cdot g + \sqrt{\eta \cdot \beta \cdot f(x, v) + \gamma_g \cdot g} \cdot \xi(t)$
+
+$\dot{n} = F(n) - G(n) + \sqrt{F(n) - G(n)} \cdot \xi(t) = P(n) + Q(n) \cdot \xi(t)$
