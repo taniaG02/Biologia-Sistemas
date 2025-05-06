@@ -14,7 +14,9 @@
 \begin{document}
 \maketitle
 
-El estudio de Isaacs et al. (2003) muestra cómo la combinación entre métodos experimentales y simulaciones computacionales permiten conocer en profundidad la red de autorregulación del phago $\lambda$.
+\large
+\textbf{El estudio de Isaacs et al. (2003) muestra cómo la combinación entre métodos experimentales y simulaciones computacionales permiten conocer en profundidad la red de autorregulación del phago $\lambda$.}
+\normalsize
 
 %%Resumen:
 %El artículo de Isaacs et al. (2003) presenta un modelo cuantitativo de autorregulación positiva en E. coli, demostrando que el ruido molecular puede inducir bistabilidad y transiciones entre estados estables. Utilizando un circuito sintético basado en el represor cI857 del fago $\lambda$, los autores integran experimentos y simulaciones estocásticas para revelar la importancia del ruido intrínseco en la regulación génica. Este enfoque redefine la comprensión de la estabilidad y la plasticidad en sistemas biológicos, abriendo nuevas perspectivas para el diseño de circuitos sintéticos.
@@ -62,15 +64,30 @@ Este artículo ha demostrado que es posible predecir la expresión génica con u
 %No se incluyen efectos epigenéticos ni estructuras secundarias del ARN mensajero.
 %El modelo es lineal y puede no captar todas las interacciones biológicas.
 
+Entre las limitaciones y desafíos que plantea el estudio se encuentran:
+\begin{itemize}
+    \item Escalabilidad: Mientras que módulos aislados son manejables, su acoplamiento en redes multicapa (ej., interacciones metabolismo-transcripción) introduce no linealidades impredecibles.
+    \item Contexto celular: El estudio usó plásmidos de alto número de copias, pero en sistemas genómicos nativos (copias únicas), el ruido y la dinámica podrían variar significativamente.
+    \item Aplicaciones \textit{in vivo}: La dependencia de la temperatura como interruptor limita su uso en organismos homeotérmicos. Alternativas (moléculas pequeñas, luz) requieren exploración.
+\end{itemize}
+
+Además, el estudio se realizó en un sistema simplificado (\textit{E. coli}), sin considerar la complejidad de la regulación eucariota. No se incluyen efectos epigenéticos ni estructuras secundarias del ARN mensajero. El modelo es lineal y puede no captar todas las interacciones biológicas.
+
 %%Proyecciones futuras:
 %Aplicaciones en diseño de terapias génicas o biosensores.
 %Extensión a otros organismos y redes génicas más complejas.
 %Integración con aprendizaje automático y modelos más sofisticados.
 
+Este trabajo abrió el camino para una explosión de estudios sobre la dinámica estocástica en biología, inspirando nuevas formas de modelar, medir y diseñar sistemas genéticos. Hoy, la ingeniería de circuitos sintéticos incluye el ruido como un parámetro más del diseño, y se reconocen funciones funcionales del ruido en desarrollo, diferenciación y resistencia a tratamientos.
+
+En retrospectiva, este artículo anticipó una visión más rica y realista de la biología molecular, donde el determinismo se mezcla con la probabilidad para generar comportamiento complejo, diverso y evolutivamente robusto.
+
 %%Reflexión/Crítica:
 %¿Qué aporta este enfoque a la biología computacional moderna?
 %¿Qué impacto ha tenido desde su publicación (2003)?
 %¿Qué desafíos siguen abiertos respecto a la predicción de expresión génica?
+
+En conclusión, el trabajo de Isaacs et al. es un hito en la caracterización cuantitativa de módulos genéticos. Al vincular modelos estocásticos con datos experimentales, no solo valida principios teóricos, sino que también ofrece un marco para diseñar circuitos sintéticos con funciones predecibles. La perspectiva futura pasa por caracterizar dinámicas de conmutación a nivel unicelular, evaluar efectos de contexto y explorar acoplamientos modulares, avanzando hacia el objetivo de diseñar redes de regulación génica con precisión predictiva.
 
 \end{document}
 

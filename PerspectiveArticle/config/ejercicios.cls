@@ -29,7 +29,7 @@
 \fancypagestyle{plain}{%
 	\lhead{\small \itshape \thetitle}
 	\ifheadernames
-		\rhead{\small \theauthor}
+		\rhead{\small RBBS}
 	\else
 		\rhead{}
 	\fi
