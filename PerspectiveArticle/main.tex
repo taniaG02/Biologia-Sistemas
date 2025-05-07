@@ -5,17 +5,16 @@
 \date{2024/25}
 
 \usepackage[all]{nowidow}
-\usepackage{listing}
 \usepackage{color}
 \usepackage{tabularx}
-%\usepackage[sorting=none, backend=bibtex]{biblatex}
-%\addbibresource{bibliography.bib}
+\usepackage[sorting=none, url=false]{biblatex}
+\addbibresource{bibliography.bib}
 
 \begin{document}
 \maketitle
 
 \large
-\textbf{El estudio de Isaacs et al. (2003) muestra cómo la integración métodos experimentales y simulaciones computacionales con modelos cuantitativos permiten conocer en profundidad el comportamiendo de la red de autorregulación del fago $\lambda$.}
+\textbf{El estudio de Isaacs et al. (2003) muestra cómo la integración métodos experimentales y simulaciones computacionales con modelos cuantitativos permiten conocer en profundidad el comportamiento de la red de autorregulación del fago $\lambda$.}
 \normalsize
 
 %%Resumen:
@@ -23,15 +22,15 @@
 En este estudio, se aisló y cuantificó un módulo de autorregulación positiva extraído del operador derecho (OR) del fago $\lambda$ en \textit{E. coli}. Mediante un bucle de realimentación positiva, la proteína represora $\lambda$ mutada (cI857) activa su propia transcripción junto a un gen reportero GFP. Midieron mediante citometría de flujo la distribución de fluorescencia celular a distintas temperaturas. Inicialmente, se estableció un modelo determinista, el cual predijo la aparición de biestabilidad al aumentar la tasa de desnaturalización térmica de cI857. No obstante, este modelo también predice histéresis, lo cual no se observó experimentalmente. Esto se resolvió mediante la incorporación de ruido intrínseco (modelo estocástico, Langevin). Este segundo modelo reprodujo cuantitativamente los histogramas, la media y el coeficiente de variación observados experimentalmente.
 
 %%Contexto:
-La mayoría de las funciones celulares resultan de la interacción entre genes, proteínas, RNAs y metabolitos a través de redes de regulación. Uno de los grandes desafíos de la biología de sistemas es ser capaz de deducir respuestas fenotípicas celulares a partir de la estructura y comportamiento de estas redes de interacción tan complejas. Estas pueden diseccionarse en módulos, unidades funcionales más sencillas (Hartwell et al), cuya caracterización aislada facilita la predicción de comportamientos en redes complejas (Arnone et al.). El trabajo de Isaacs et al. ejemplifica este enfoque  denominado “bottom up”.
+La mayoría de las funciones celulares resultan de la interacción entre genes, proteínas, RNAs y metabolitos a través de redes de regulación. Uno de los grandes desafíos de la biología de sistemas es ser capaz de deducir respuestas fenotípicas celulares a partir de la estructura y comportamiento de estas redes de interacción tan complejas. Estas pueden diseccionarse en módulos, unidades funcionales más sencillas (\cite{Hartwell1999}), cuya caracterización aislada facilita la predicción de comportamientos en redes complejas \cite{Arnone1997}. El trabajo de Isaacs et al. ejemplifica este enfoque  denominado “bottom up”.
 %¿Qué se sabía antes sobre la predicción de la expresión génica a partir de la secuencia?
 %¿Qué limitaciones existían en los métodos anteriores?
 %¿Por qué es relevante volver a examinar esta relación?
 
 %%Contribución del estudio: 
-Este estudio demuestra cómo un enfoque integrado en el que se combina un modelo cuantitativo junto con los componentes esenciales de una red, permite descubrir propiedades clave del sistema como la biestabilidad o la presencia de histéresis. Además, la combinación de un enfoque teórico y experimental es clave para entender el funcionamiento de las redes reguladoras a gran escala como los patrones globales de expresión o la letalidad génica (Hartwell et al).
+Este estudio demuestra cómo un enfoque integrado en el que se combina un modelo cuantitativo junto con los componentes esenciales de una red, permite descubrir propiedades clave del sistema como la biestabilidad o la presencia de histéresis. Además, la combinación de un enfoque teórico y experimental es clave para entender el funcionamiento de las redes reguladoras a gran escala como los patrones globales de expresión o la letalidad génica (\cite{Hartwell1999}).
 
-Isaacs et al. demostraron que la desestabilización de la proteína mutante del represor $\lambda$ debida a la temperatura desencadenaba un régimen biestable dentro de una población celular que se mantenía gracias a la retroalimentación positiva del represor. Esta biestabilidad sólo pudo modelarse mediante un modelo estocástico que era capaz de reflejar lo que sucede a nivel celular: el ruido génico se debe a fluctuaciones en el número abosluto de moléculas debido a la alatoriedad de las reacciones químicas (Ozbudak et al.). Este trabajo refuerza la idea de que el ruido intrínseco, lejos de ser un artefacto, es un componente funcional en sistemas biológicos, capaz de impulsar transiciones entre estados estables sin necesidad de fluctuaciones externas. Esto conecta con trabajos de Elowitz \& Leibler (2000) sobre ruido intrínseco/extrínseco en expresión génica, y subraya la función dual del ruido: a menudo considerado perturbador, aquí es un motor de cambio de estado programado.
+Isaacs et al. demostraron que la desestabilización de la proteína mutante del represor $\lambda$ debida a la temperatura desencadenaba un régimen biestable dentro de una población celular que se mantenía gracias a la retroalimentación positiva del represor. Esta biestabilidad sólo pudo modelarse mediante un modelo estocástico que era capaz de reflejar lo que sucede a nivel celular: el ruido génico se debe a fluctuaciones en el número absoluto de moléculas debido a la aleatoriedad de las reacciones químicas (\cite{Ozbudak2002}). Este trabajo refuerza la idea de que el ruido intrínseco, lejos de ser un artefacto, es un componente funcional en sistemas biológicos, capaz de impulsar transiciones entre estados estables sin necesidad de fluctuaciones externas. Esto conecta con trabajos de \cite{Elowitz2000} sobre ruido intrínseco/extrínseco en expresión génica, y subraya la función dual del ruido: a menudo considerado perturbador, aquí es un motor de cambio de estado programado.
 
 %Uso de circuitos genéticos sintéticos con promotores diseñados racionalmente.
 %Desarrollo de un modelo cuantitativo que relaciona secuencia y expresión.
@@ -66,7 +65,7 @@ Entre las limitaciones y desafíos que plantea el estudio se encuentran:
 \begin{itemize}
     \item Escalabilidad: Mientras que módulos aislados son manejables, su acoplamiento en redes multicapa (ej., interacciones metabolismo-transcripción) introduce no linealidades impredecibles.
     \item Contexto celular: El estudio usó plásmidos de alto número de copias, pero en sistemas genómicos nativos (copias únicas), el ruido y la dinámica podrían variar significativamente.
-    \item Estudio microscópico complementario: podría posibilitar la medición temporal transiciones en escalas de tiempo inferiores al tiempo de división de la celula, permitiendo la comparación directa del modelo experimental respecto al nivel unicelular, mientras que la tecnología utilizada en el estudio (citometría de flujo) proporciona únicamente estadísticas unicelulares en una población de células.
+    \item Estudio microscópico complementario: podría posibilitar la medición temporal transiciones en escalas de tiempo inferiores al tiempo de división de la célula, permitiendo la comparación directa del modelo experimental respecto al nivel unicelular, mientras que la tecnología utilizada en el estudio (citometría de flujo) proporciona únicamente estadísticas unicelulares en una población de células.
     \item Aplicaciones \textit{in vivo}: La dependencia de la temperatura como interruptor limita su uso en organismos homeotérmicos. Alternativas (moléculas pequeñas, luz) requieren exploración.
 \end{itemize}
 
@@ -78,7 +77,7 @@ Sin embargo, el estudio empleó plásmidos de alto número de copias lo que no e
 %Extensión a otros organismos y redes génicas más complejas.
 %Integración con aprendizaje automático y modelos más sofisticados.
 
-Este trabajo abrió el camino para una explosión de estudios sobre la dinámica estocástica en biología, inspirando nuevas formas de modelar, medir y diseñar sistemas genéticos. Hoy, la ingeniería de circuitos sintéticos incluye el ruido como un parámetro más del diseño, y se reconoce el papel fundamentak que juega el ruido en el desarrollo, la diferenciación o la resistencia a tratamientos. Además, este artículo anticipó una visión más rica y realista de la biología molecular, donde el determinismo se mezcla con la probabilidad para generar comportamiento complejo, diverso y evolutivamente robusto.
+Este trabajo abrió el camino para una explosión de estudios sobre la dinámica estocástica en biología, inspirando nuevas formas de modelar, medir y diseñar sistemas genéticos. Hoy, la ingeniería de circuitos sintéticos incluye el ruido como un parámetro más del diseño, y se reconoce el papel fundamental que juega el ruido en el desarrollo, la diferenciación o la resistencia a tratamientos. Además, este artículo anticipó una visión más rica y realista de la biología molecular, donde el determinismo se mezcla con la probabilidad para generar comportamiento complejo, diverso y evolutivamente robusto.
 
 %%Reflexión/Crítica:
 %¿Qué aporta este enfoque a la biología computacional moderna?
@@ -87,15 +86,6 @@ Este trabajo abrió el camino para una explosión de estudios sobre la dinámica
 
 En conclusión, el trabajo de Isaacs et al. es un hito en la caracterización cuantitativa de módulos genéticos. Al emplear modelos estocásticos junto con variables cuyos valores son conocidos, no sólo valida principios teóricos, sino que también ofrece un marco para diseñar circuitos sintéticos con funciones predecibles. La perspectiva futura pasa por caracterizar dinámicas de conmutación a nivel unicelular, evaluar efectos de contexto y explorar acoplamientos modulares, avanzando hacia el objetivo de diseñar redes de regulación génica con precisión predictiva.
 
-Bibliografía 
-
-Arnone, M. I. \& Davidson, E. H. (1997) Development (Cambridge, U.K.) 124,1851–1864.
-
-Elowitz, M. B. \& Leibler, S. (2000) Nature 403, 335–338
-
-Hartwell, L. H., Hopfield, J. J., Leibler, S. \& Murray, A. W. (1999) Nature 402,C47–C51.
-
-Ozbudak, E. M., Thattai, M., Kurtser, I., Grossman, A. D. \& van Oudenaarden, A. (2002) Nat. Genet. 31, 69–73.
-
+\printbibliography
 
 \end{document}
