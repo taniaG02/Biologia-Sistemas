@@ -41,15 +41,18 @@ Isaacs et al. demostraron que la desestabilización de la proteína mutante del 
 %Ajuste del modelo con regresión lineal y evaluación de su predictibilidad.
 %Validación cruzada con nuevos promotores.
 
-El uso de este módulo altamente conocido permitió la incorporación de los parámetros bioquímicos (afinidad de unión a operadores, tasas de dimerización) en los modelos desarrollados. La introducción en el modelo estocástico permitió capturar de manera rigurosa el estado de las células, obteniendo unos resultados prácticamente idénticos a lo experimentales. Este enfoque resalta la necesidad de modelos mecanicistas para predecir comportamientos emergentes en biología sintética.
-La integración de un modelo determinista (bifurcación de puntos fijos) con términos de ruido tipo Langevin (ruido blanco) permitió reproducir histogramas de fluorescencia, medias y coeficientes de variación sin ajustar artificiosamente un “parámetro de ruido”. Este enfoque es un precedente de las actuales prácticas en biología de sistemas, donde se combinan simulaciones de reacciones discretas (Gillespie) con análisis continuo para capturar fenómenos multiescala. Para los modelos experimentales se realizó una medición sistemática de niveles de GFP para la cuantificación de la expresión. Los resultados experimentales se utilizaron para ajustar un modelo con regresión lineal y evaluar su predictibilidad. 
+
+El módulo genético utilizado en este estudio está bien caracterizado (procedente del sistema regulador del fago $\lambda$), lo que facilitó la integración de parámetros bioquímicos ya establecidos (afinidad de unión del represor a los operadores y las tasas de dimerización proteica) en los modelos matemáticos desarrollados, dotando al modelo de un buen nivel de precisión biológica. La incorporación de fluctuaciones estocásticas mediante las ecuaciones de Langevin, que incorporan "ruido interno" debido al escaso número de moléculas en el sistema, permitió adaptar correctamente la distribución bimodal de los estados celulares observada experimentalmente. A diferencia de los enfoques que ajustaban de manera empírica un "parámetro de ruido", el hecho de que ese modelo mecanicista haya podido replicar los histogramas de fluorescencia, las medias y los coeficientes de variación sin que hiciera falta calibraciones arbitrarias, pone de manifiesto la importancia de que los modelos que se utilicen para tratar de predecir comportamientos emergentes dentro de la biología sintética tengan que estar basados en mecanismos bioquímicos reales.
+
+Este trabajo permitió establecer un precedente a nivel metodológico. Esto es porque combinaron herramientas complementarias: simulaciones estocásticas discretas (como el algoritmo de Gillespie, permitiendo modelar eventos moleculares individuales) con el análisis determinista continuo. Esta forma de integrar multiescala es importante para abordar sistemas donde coexisten procesos rápidos y lentos. Experimentalmente se realizaron mediciones sistemáticas de fluorescencia de GFP mediante el uso de citometría de flujo, cuantificando la expresión génica a nivel de células individuales. Los datos se ajustaron posteriormente al modelo utilizando regresión lineal, validando su capacidad predictiva al demostrar una correlación significativa entre las simulaciones y los resultados experimentales. Este enfoque que integra teoría, modelado estocástico y validación experimental refleja el potencial de los modelos basados en mecanismos para resolver la dinámica de las redes genéticas complejas.
+
 
 %%Resultados relevantes:
 %Se puede predecir la expresión con alta precisión en un rango amplio.
 %Confirmación de que elementos de secuencia contribuyen de manera aditiva a la fuerza del promotor.
 %Identificación de los sitios más determinantes para la actividad del promotor.
 
-Este artículo ha demostrado que es posible predecir la expresión génica con una alta precisión en un rango amplio. Mediante modelos teóricos y simulaciones se ha podido confirmar que los elementos de secuencia contribuyen de manera aditiva a la fuerza del promotor, identificando los sitios más determinantes para la actividad del promotor.
+Este estudio demostró que es posible predecir y medir cuantitativamente la dinámica de un módulo genético autorregulador, concretamente una red de retroalimentación positiva derivada del fago $\lambda$. Mediante modelos teóricos (enfoque determinista y estocástico) y simulaciones se ha podido confirmar que los elementos de secuencia contribuyen de manera aditiva a la fuerza del promotor, identificando los sitios más determinantes para la actividad del promotor (arquitectura de retralimentación positiva).
 
 %%Implicaciones:
 %Permite diseño predictivo de promotores con fuerza deseada.
@@ -61,30 +64,30 @@ Este artículo ha demostrado que es posible predecir la expresión génica con u
 %No se incluyen efectos epigenéticos ni estructuras secundarias del ARN mensajero.
 %El modelo es lineal y puede no captar todas las interacciones biológicas.
 
-Entre las limitaciones y desafíos que plantea el estudio se encuentran:
-\begin{itemize}
-    \item Escalabilidad: Mientras que módulos aislados son manejables, su acoplamiento en redes multicapa (ej., interacciones metabolismo-transcripción) introduce no linealidades impredecibles.
-    \item Contexto celular: El estudio usó plásmidos de alto número de copias, pero en sistemas genómicos nativos (copias únicas), el ruido y la dinámica podrían variar significativamente.
-    \item Estudio microscópico complementario: podría posibilitar la medición temporal transiciones en escalas de tiempo inferiores al tiempo de división de la célula, permitiendo la comparación directa del modelo experimental respecto al nivel unicelular, mientras que la tecnología utilizada en el estudio (citometría de flujo) proporciona únicamente estadísticas unicelulares en una población de células.
-    \item Aplicaciones \textit{in vivo}: La dependencia de la temperatura como interruptor limita su uso en organismos homeotérmicos. Alternativas (moléculas pequeñas, luz) requieren exploración.
-\end{itemize}
+%Entre las limitaciones y desafíos que plantea el estudio se encuentran:
+%\begin{itemize}
+%    \item Escalabilidad: Mientras que módulos aislados son manejables, su acoplamiento en redes multicapa (ej., interacciones metabolismo-transcripción) introduce no linealidades impredecibles.
+%    \item Contexto celular: El estudio usó plásmidos de alto número de copias, pero en sistemas genómicos nativos (copias únicas), el ruido y la dinámica podrían variar significativamente.
+%    \item Estudio microscópico complementario: podría posibilitar la medición temporal transiciones en escalas de tiempo inferiores al tiempo de división de la célula, permitiendo la comparación directa del modelo experimental respecto al nivel unicelular, mientras que la tecnología utilizada en el estudio (citometría de flujo) proporciona únicamente estadísticas unicelulares en una población de células.
+%    \item Aplicaciones \textit{in vivo}: La dependencia de la temperatura como interruptor limita su uso en organismos homeotérmicos. Alternativas (moléculas pequeñas, luz) requieren exploración.
+%\end{itemize}
 
-Intento fusión:
-Sin embargo, el estudio empleó plásmidos de alto número de copias lo que no es representativo del fago $\lambda$ que sólo presenta una copia, por lo que el ruido y la dinámica podría variar significativamente de la realidad. Además, sólo se está caracterizando un módulo aislado de manera que al acoplarlo a redes multicapa podrían introducirse no linealidades que dieran lugar a un comportamiento impredecible por el modelo. Por otro lado, la citometría de flujo sólo proporciona estadísticas unicelulares a través de una población de células. De manera que uno de los propósitos de los autores es desarrollar un estudio microscópico celular que permita la medición a tiempo real de las transiciones que ocurren en escalas de tiempo inferiores al tiempo de división celular y que permita la comparación directa entre el modelo y el experimento a nivel unicelular. En el caso de querer emplear este módulo en organismos eucariotas, deberíamos considerar la complejidad de la regulación eucariota desde efectos epigenéticos a las estructuras secundarias del ARN mensajero. Además, su uso estaría limitado en organismos homeotermos sensibles al cambio de temperatura.
+%Intento fusión:
+Sin embargo, el estudio presenta varias limitaciones. Se empleó plásmidos de alto número de copias lo que no es representativo del fago $\lambda$ que sólo presenta una copia, por lo que el ruido y la dinámica podría variar significativamente de la realidad. Además, sólo se está caracterizando un módulo aislado de manera que al acoplarlo a redes multicapa podrían introducirse no linealidades que dieran lugar a un comportamiento impredecible por el modelo. Por otro lado, la citometría de flujo sólo proporciona estadísticas unicelulares a través de una población de células. De manera que uno de los propósitos de los autores es desarrollar un estudio microscópico celular que permita la medición a tiempo real de las transiciones que ocurren en escalas de tiempo inferiores al tiempo de división celular y que permita la comparación directa entre el modelo y el experimento a nivel unicelular. En el caso de querer emplear este módulo en organismos eucariotas, deberíamos considerar la complejidad de la regulación eucariota desde efectos epigenéticos a las estructuras secundarias del ARN mensajero. Además, su uso estaría limitado en organismos homeotermos sensibles al cambio de temperatura.
 
 %%Proyecciones futuras:
 %Aplicaciones en diseño de terapias génicas o biosensores.
 %Extensión a otros organismos y redes génicas más complejas.
 %Integración con aprendizaje automático y modelos más sofisticados.
 
-Este trabajo abrió el camino para una explosión de estudios sobre la dinámica estocástica en biología, inspirando nuevas formas de modelar, medir y diseñar sistemas genéticos. Hoy, la ingeniería de circuitos sintéticos incluye el ruido como un parámetro más del diseño, y se reconoce el papel fundamental que juega el ruido en el desarrollo, la diferenciación o la resistencia a tratamientos. Además, este artículo anticipó una visión más rica y realista de la biología molecular, donde el determinismo se mezcla con la probabilidad para generar comportamiento complejo, diverso y evolutivamente robusto.
+Este trabajo dio lugar un gran número de estudios sobre la dinámica estocástica en la biología, inspirando formas de modelar, medir y diseñar sistemas genéticos. Hoy la ingeniería de circuitos sintéticos incluye el ruido como un parámetro más del diseño y se reconoce el papel fundamental que el ruido desempeña en el desarrollo, en la diferenciación o en la resistencia a tratamientos. Este artículo también anticipó una visión más rica y más realista de la biología molecular, donde el determinismo se mezclaba con la probabilidad para dar lugar a un comportamiento complejo, diverso y evolutivamente robusto.
 
 %%Reflexión/Crítica:
 %¿Qué aporta este enfoque a la biología computacional moderna?
 %¿Qué impacto ha tenido desde su publicación (2003)?
 %¿Qué desafíos siguen abiertos respecto a la predicción de expresión génica?
 
-En conclusión, el trabajo de Isaacs et al. es un hito en la caracterización cuantitativa de módulos genéticos. Al emplear modelos estocásticos junto con variables cuyos valores son conocidos, no sólo valida principios teóricos, sino que también ofrece un marco para diseñar circuitos sintéticos con funciones predecibles. La perspectiva futura pasa por caracterizar dinámicas de conmutación a nivel unicelular, evaluar efectos de contexto y explorar acoplamientos modulares, avanzando hacia el objetivo de diseñar redes de regulación génica con precisión predictiva.
+En conclusión, el trabajo de Isaacs et al. se considera un avance en el terreno de la caracterización cuantitativa de módulos genéticos. Al emplear modelos estocásticos junto con valores conocidos, lo que permite no sólo validar principios teóricos, sino también proporcionar un marco para el diseño de circuitos sintéticos con funciones predecibles. La perspectiva futura pasa por la caracterización de las dinámicas de la conmutación a nivel unicelular, la evaluación de los efectos de contexto o la búsqueda de acoplamientos modulares, acercándonos así al objetivo de diseñar redes de regulación génica con capacidades de predicción precisas.
 
 \printbibliography
 
