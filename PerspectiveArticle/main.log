@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.16)  7 MAY 2025 12:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.16)  7 MAY 2025 15:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1719,7 +1719,12 @@ Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
 \TX@delta=\dimen315
 \TX@cols=\count380
 \TX@ftn=\toks55
-) (./main.aux)
+) (./main.aux
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
+Package babel Info: 'spanish' activates 'spanish' shorthands.
+(babel)             Reported  on input line 8.
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
@@ -1799,8 +1804,6 @@ e
 
 LaTeX Info: Redefining \. on input line 14.
 LaTeX Info: Redefining \% on input line 14.
-Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported  on input line 14.
 Package hyperref Info: Link coloring ON on input line 14.
 (./main.out) (./main.out)
 \@outlinefile=\write4
@@ -1845,9 +1848,6 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 {c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2025/
 texmf-dist/fonts/enc/dvips/base/8r.enc}]
 
-
-LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 92.
-
 [2] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./main.aux
@@ -1858,25 +1858,15 @@ LaTeX Info: Redefining \% on input line 8.
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-
-Package lastpage Warning: Rerun to get the references right on input line 92.
-
  ) 
 Here is how much of TeX's memory you used:
- 32227 strings out of 473190
- 572168 string characters out of 5719979
- 1076418 words of memory out of 5000000
- 54855 multiletter control sequences out of 15000+600000
- 579735 words of font info for 85 fonts, out of 8000000 for 9000
+ 32228 strings out of 473190
+ 572198 string characters out of 5719979
+ 1076426 words of memory out of 5000000
+ 54857 multiletter control sequences out of 15000+600000
+ 579126 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  143i,12n,173p,1032b,2091s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/tex
@@ -1884,10 +1874,10 @@ live/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025
 /texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><c:/texlive/2025/texmf-dist/fon
 ts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/pa
 latino/uplri8a.pfb>
-Output written on main.pdf (2 pages, 76347 bytes).
+Output written on main.pdf (2 pages, 76206 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
+ 47 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
  3 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
