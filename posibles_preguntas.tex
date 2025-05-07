@@ -1,0 +1,52 @@
+----------------------------------------------------------------------------
+Preguntas para la discusión 
+1.	¿Cómo afectaría reducir el número de copias del plásmido a la bistabilidad (m)?
+
+En el artículo, mencionan que usaron plásmidos de alto número de copias (50-70 por célula). Si se reduce el número de copias, probablemente disminuiría la cantidad total de represores cI857 y GFP en la célula. Según el modelo matemático presentado, la síntesis de proteínas depende de parámetros como la tasa de producción basal (β) y el número de copias del plásmido (m). Si m disminuye, la función f(x, v) en las ecuaciones se vería afectada, reduciendo la producción de represores. Esto podría desplazar el sistema hacia un régimen donde la retroalimentación positiva no es suficiente para sostener la bistabilidad, llevando a un estado monostable. Además, al haber menos moléculas, el ruido interno (fluctuaciones estocásticas) aumentaría, lo que podría facilitar transiciones más frecuentes entre estados o incluso eliminar la distinción clara entre ellos. Sería interesante simular esto ajustando el parámetro m en el modelo y observando cómo cambian las distribuciones de expresión.
+
+2.	¿Qué implicaciones tiene la ausencia de histéresis en sistemas biológicos naturales?
+La ausencia de histéresis sugiere que el sistema no "recuerda" su estado anterior, permitiendo una transición rápida entre estados según las condiciones actuales. Esto es útil en entornos dinámicos donde la flexibilidad es clave (ej.: respuesta a estrés).
+En este estudio, el ruido estocástico dominó sobre efectos deterministas, enmascarando la histéresis. En sistemas naturales más complejos (con múltiples módulos interconectados), la histéresis podría reaparecer, proporcionando robustez frente a fluctuaciones.
+El fago lambda silvestre muestra histéresis debido a su red dual (cI y Cro), lo que resalta la importancia del contexto de red en el comportamiento emergente.
+
+3.	¿Podría aplicarse este modelo a otros sistemas de retroalimentación, como los que involucran ARN?
+El modelo actual se centra en la regulación por proteínas (represores que se unen a ADN). Para sistemas con ARN (por ejemplo, riboswitches o ARN no codificante que regula expresión génica), habría que adaptar las ecuaciones. En lugar de dimerización de proteínas y unión a operadores, se modelarían interacciones ARN-ARN o ARN-proteína. Además, la dinámica del ARN es más rápida (menor vida media) comparada con las proteínas, lo que podría requerir ajustar los parámetros de degradación (γ). Sin embargo, los principios básicos de retroalimentación y ruido interno seguirían siendo relevantes. Sería importante incluir términos que representen la síntesis y degradación de ARN, y posiblemente competencia por sitios de unión. Simular esto permitiría predecir si la bistabilidad emerge en tales sistemas y cómo el ruido afecta su comportamiento.
+
+
+1. ¿Cómo funciona el módulo autorregulador descrito en el estudio? ¿Qué componentes genéticos se utilizaron y cómo interactúan?
+
+El artículo menciona que el sistema autorregulador se construyó utilizando elementos del fago λ, específicamente el operador derecho (OR) y el gen cI. El promotor PRM regula la expresión del gen cI857 (una versión sensible a la temperatura del represor λ) y el gen gfpmut3 (GFP). Los operadores OR1, OR2 y OR3 son sitios de unión para el represor. Cuando el represor se une a OR1 y OR2, activa la transcripción desde PRM, pero si también se une a OR3, reprime la transcripción. Esto crea una retroalimentación positiva porque el represor producido activa su propia expresión hasta cierto punto.
+
+2. ¿Qué papel juega la temperatura en la desestabilización de la proteína represora cI857 y cómo afecta esto a la expresión génica?
+
+La proteína cI857 es termolábil, lo que significa que a temperaturas más altas se desestabiliza y se degrada más rápidamente. Esto permite modular la cantidad de represor funcional en la célula. Al aumentar la temperatura, se reduce la concentración de represor activo, lo que puede llevar al sistema a transicionar de un estado de alta expresión (monoestable) a un régimen bistable y finalmente a un estado bajo. La versión silvestre (cI) no es sensible a la temperatura, por lo que el sistema con cI permanece en un estado activo estable en todo el rango de temperatura, como se muestra en el control pT202b.
+
+3. ¿Qué se entiende por bistabilidad en este contexto y cómo se relaciona con la arquitectura de retroalimentación positiva?
+
+La bistabilidad surge de la no linealidad en la síntesis del represor debido a la cooperatividad en la unión de los dímeros a los operadores. El modelo muestra que, para ciertas tasas de desestabilización (γx), existen tres estados estacionarios, pero solo dos son estables (alto y bajo). La retroalimentación positiva amplifica pequeñas fluctuaciones, permitiendo que el sistema se mantenga en uno de los dos estados estables. Esto se ilustra en la curva de bifurcación donde, en un rango intermedio de γx, el sistema es bistable.
+
+4. ¿Cómo incorpora el modelo tanto componentes deterministas como estocásticos? ¿Qué diferencias clave se observan entre las predicciones deterministas y los resultados experimentales?
+
+Las fluctuaciones consideradas son "ruido interno", originado por el bajo número de moléculas involucradas (ej., represores y GFP). Esto se modela mediante términos estocásticos en las ecuaciones de Langevin. Los experimentos muestran distribuciones bimodales en el régimen bistable, lo que respalda que el ruido interno es suficiente para causar transiciones entre estados, incluso sin histéresis, lo cual no se predice en el modelo determinista.
+
+El modelo determinista predice histéresis porque asume que el sistema permanece en un estado estable una vez que lo alcanza. Sin embargo, los experimentos no mostraron histéresis, lo que sugiere que las fluctuaciones estocásticas permiten transiciones rápidas entre estados, borrando la dependencia de la historia. El modelo estocástico incorpora estas fluctuaciones, explicando la ausencia de histéresis observada.
+
+5. ¿Por qué es importante el coeficiente de variación (Cv) en el análisis de las distribuciones de expresión de GFP? ¿Qué información proporciona sobre el sistema?
+
+El Cv (desviación estándar dividida por la media) refleja la dispersión relativa de la expresión de GFP. En el régimen monoestable alto, el Cv es bajo porque hay muchas moléculas de GFP, reduciendo el ruido. En el régimen bistable, el Cv aumenta porque la población se divide en dos estados, aumentando la varianza. En el estado bajo, aunque hay menos moléculas (mayor ruido intrínseco), el Cv disminuye gradualmente porque el sistema se estabiliza en un solo estado.
+
+6. ¿Qué implicaciones tienen los resultados obtenidos en la comprensión de redes regulatorias más complejas o en aplicaciones de biología sintética?
+
+La bistabilidad mediada por retroalimentación positiva es crucial en procesos como la diferenciación celular, donde células eligen entre destinos distintos. En enfermedades como el cáncer, la inestabilidad en bucles de retroalimentación podría llevar a estados patológicos. Este estudio sugiere que el ruido interno puede facilitar transiciones entre estados, relevante en contextos fisiológicos y patológicos.
+
+7. ¿Cómo se validaron los resultados del modelo con los experimentos? ¿Qué ajustes se realizaron para lograr la concordancia?
+
+Los parámetros ajustados fueron γx (tasa de desestabilización del represor) y la constante de proporcionalidad c(γx) que relaciona el número de GFP con la fluorescencia. La validación incluyó la concordancia entre la relación exponencial de γx con la temperatura y estudios previos sobre la termolabilidad de cI857.
+
+8. ¿Qué limitaciones podrían tener los modelos utilizados y cómo podrían mejorarse en futuros estudios?
+
+El uso de plásmidos de alta copia puede exagerar el número de moléculas, reduciendo el ruido comparado con sistemas genómicos de baja copia. Además, el modelo asume tiempos de división celular sincronizados y no considera interacciones con otras redes celulares, limitando su aplicabilidad a sistemas naturales más complejos.
+
+Se sugiere usar microscopía de células individuales para medir transiciones temporales rápidas, actualmente enmascaradas en citometría de flujo. También, estudiar el sistema en copias únicas para entender mejor el ruido en contextos nativos.
+
+
