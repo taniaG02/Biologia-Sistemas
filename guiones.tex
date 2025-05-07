@@ -31,6 +31,57 @@ Parte Determinista (Tania)
 - Biestabilidad en función de los parámetro
 - Histéresis --> si predicho por el modelo
 
+############################################
+##########Parte Tania completo ##############
+#############################################
+
+Como ha mencionado Sandra, el módulo estudiado se extrajo del fago lambda específicamente del operador derecho (OR), que regula los genes cI (represor) y cro.
+Este sistema incluye las siguiente variables clave. X que representa los monómeros del represor cI; X2 que representa los dímeros activos de cI y Di que representa los sitios de unión en el ADN con i dímeros unidos. Por ejemplo:
+o	D1: Un dímero unido a OR1.
+o	D2: Dos dímeros unidos a OR1 y OR2.
+o	D3: Tres dímeros unidos a OR1, OR2 y OR3 (represión).
+Con ello, podemos plantear las reacciones químicas de dimerización, unión de dímeros a sus sitios correspondientes en el DNA, las reacciones de trasncripción, traducción y degradación como vemos indicadas en la diapositiva.
+---
+Con esto, podríamos escribir las ecuaciones diferenciales, establecer las ligaduras como la dominancia del represor cI, donde solo se considera la autorregulacion por cI, ignorando otros reguladores como la proteína Crc del fago lambda, la ausencia de cooperativdad no canónica, es decir, que la unión de los dímeros a los operadores OR1-OR sigue las reglas de afinidad predefinidas (sigma1 y sigma2) y la degradación proporcional donde la tasa de degradación es lineal a la concentración. 
+Respecto a las asunciones biológicas, se asume la separación de escala temporales donde tenemos reacciones rápidas (dimerización y unión a DNA) y reacciones lentas (transcripción y degradación) y degradación.
+A partir de aquí podemos escribir las ecuaciones diferenciales, despejarlas y obtener el modelo matemático como hemos hecho en las clases impartidas en esta asignatura. 
+--
+Asi, las ecuaciones finales obtenidas para el modelo que denominan deterministas son las siguientes, donde la x denota el número de monómeros cI, mientras que g se corresponde con el número de moléculas GFP, nuestro reportero (mencionar v?). 
+Si nos centramos en la ecuación correspondiente a x, el represor, podemos observar los términos de producción betaf(x,v), que depende de x (retroalimentación positiva). Esta función viene definida de la forma que vemos ahí y, aunque parece compleja, es lo mismo que hemos explicado ya de forma conceptual. Esta función (f(x,v)) captura la activación/represión trasncripcional (depende de la unión de los dímeros a los sitios de unión en el DNA (OR)). Vemos que la función no es lineal debido a la competencia entre activación y represión. Veremos que esto genera un comportamiento biestable, característico de los bucles de retroalimentación positiva.
+
+En el numerador tenemos los términos que se corresponden con la activación transcripcional (es decir, cuando el dímero de cI se une a OR1 y OR2). En el denominador además incluimos los términos de represión (unión a OR3) (los términos de denominador por orden representan la tasa basal, la unión a OR1, la unión a simultánea a OR1 y OR2, la simultánea a los tres sitios OR1, 2 y 3 (represión)).
+Por otro lado, tenemos la degradación que es proporcional a la concentración de cI (termino de degradación es sensible a temperatura).
+La función h(x,v) permite capturar el efecto de las reacciones rápidas (dimerización y unión al DNA). (explicar cada término)
+---
+Parámetros principales y su impacto:
+Y como podemos observar tenemos muchos parámetros,
+•	m: Número de copias del plásmido (A mayor m, mayor producción basal).
+•	α: Activación transcripcional por unión a OR2. Factor de activación por OR2. Amplifica la transcripción (α≈11)
+•	σ1,σ2: Afinidades relativas de unión a OR2 y OR3. Controlan competencia entre activación y represión.
+•	γx : Tasa de degradación de cI. Aumenta con la temperatura; determina transición entre estados.
+Dado que nuestro enfoque está en un sistema autorregulatorio derivado del fago lambda, la mayoría de los parámetros son conocidos, lo que permite desarrollar un modelo cuantitativo.
+
+%%Valores Usados:
+%%σ1=2, σ2=0.08, α=11, m=60 (copias/plásmido).
+%%s1≈2, s2≈0.08, c1≈0.05, c2≈0.33.
+
+La mayoría de los parámetros son conocidos
+La tasa de desestabilización (γx) y el número de copias por plásmido (m) determinan el número de moléculas represoras en estado estacionario.
+---
+Una vez entendidos los términos de las ecuaciones, podemos llevar a cabo un análisis del modelo. Para ello, lo primero que tendríamos que hacer es calcular los puntos de equilibrio, para ello igualamos la ecuación a 0. Si dibujamos el diagrama de fases, este mostraría biestabilidad para un rango determinado de la tasa de degradación. 
+Para poder jugar con esto y hacer simulaciones/representaciones en python, tendríamos que resolver la matriz Jacobiana, lo cual es complejo debido a la no linealidad. Por ello, decimos simplificar las ecuaciones, asumiendo un volumen constante e igual a 1. De esta forma ignoramos el crecimiento celular y nos enfocamos en x, el represor como variable principal.
+Las ecuaciones quedarían como se muestran en la diapositiva. 
+---
+De esta forma podemos estudiar más fácilmente la dinámica de la ecuación. Asi, hemos implementado estas ecuaciones simplificadas en Python para graficar el diagrama de fases en función de la tasa de degradación de x, el represor. Este parámetro es dependiente de la temperatura. Asi, a más temperatura, mayor tasa de degradación y cómo podemos observar, bajos valores presentan un único estado estable, valores intermedios (3000-4000) presentan dos estados estables (biestabilidad) y altos valores llevan de nuevo a un único estado estable. 
+Esto mismo podemos observarlo si resolvemos las ecuaciones diferenciales y graficamos la función a lo largo del tiempo. Aquí de nuevo vemos que a bajos valores o altos valores del parámetro (tasa de degradación), tenemos un único estado estable en el cual siempre vamos a acabar independientemente de las condiciones iniciales. Sin embargo, en el rango intermedio, donde teníamos biestabilidad, vemos que, en función de las condiciones iniciales, acabamos en un estado con alta concentración de cI o en un estado con baja concentración de cI.
+En el artículo el único parámetro que modifican es este que estamos viendo, la tasa de degradación (al variar la temperatura). No obstante, el otro parámetro que podíamos modificarse era m, el número de copias de cI por plásmido. Este parámetro lo establecen en un valor de 60 (las condiciones del experimento). Esto es relevante porque la biestabilidad puede estar presente o no en función del valor de este parámetro. Asi en el artículo establecen m=60, que, como podemos observar en ese rango hay biestabilidad. Un bajo número de copias o un alto número de copias lleva a un único estado estable. 
+---
+Por tanto, hemos visto que el modelo determinista presenta biestabilidad para un rango concreto del parámtro de la tasa de degradación y además, este modelo presenta histéresis, es decir, qu la trayectoria es distinta al aumentar/disminuir la temperatura (modificar la tasa de degradación). 
+Si dibujásemos el diagrama de bifurcación, obtendríamos un punto crítico del tipo silla-nodo.
+Esto de forma biológica nos ofrece “memoria”, es decir, no hay una respuesta inmediata, sino que depende de la historia previa. No obstante, esta histéresis no se observará de forma experimental como veremos más adelante por lo que es necesario plantear un nuevo modelo donde se introduce ruido estocástico.
+
+
+
 Parte Estocástica (Dani)
 
 - Fórmula (explicar ruido y por qué se mete)
