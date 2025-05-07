@@ -76,12 +76,15 @@ $h(x, v) = 1 + \frac{4 \cdot c_1 \cdot x}{v} + \frac{4 \cdot w \cdot d_0(x, v)}{
 
 ## Con v = 1
 
-$d_0(x, v) = \frac{m}{1 + c \cdot x^2 + \sigma_1 \cdot c^2 \cdot x^4 + \sigma_1 \cdot \sigma_2 \cdot c^3 \cdot x^6}$
+$d_0(x) = \frac{m}{1 + c \cdot x^2 + \sigma_1 \cdot c^2 \cdot x^4 + \sigma_1 \cdot \sigma_2 \cdot c^3 \cdot x^6}$
 
-$f(x, v) = d_0(x, v) \cdot (1 + c \cdot x^2 + \alpha \cdot \sigma_1 \cdot c^2 \cdot x^4)$
+$f(x) = d_0(x) \cdot (1 + c \cdot x^2 + \alpha \cdot \sigma_1 \cdot c^2 \cdot x^4)$
 
-$h(x, v) = 1 + 4 \cdot c_1 \cdot x + 4 \cdot c \cdot d_0(x, v) \cdot x + 16 \cdot \sigma_1 \cdot c^2 \cdot d_0(x, v) \cdot x^3 + 36 \cdot \sigma_1 \cdot \sigma_2 \cdot c^3 \cdot d_0(x, v) \cdot x^5$
+$h(x) = 1 + 4 \cdot c_1 \cdot x + 4 \cdot c \cdot d_0(x) \cdot x + 16 \cdot \sigma_1 \cdot c^2 \cdot d_0(x) \cdot x^3 + 36 \cdot \sigma_1 \cdot \sigma_2 \cdot c^3 \cdot d_0(x) \cdot x^5$
 
+$\dot{x} = \frac{1}{h(x)} \cdot (\beta \cdot f(x) - \gamma_x \cdot x)$
+
+$\dot{g} = \eta \cdot \beta \cdot f(x) - \gamma_g \cdot g$
 
 
 
