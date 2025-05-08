@@ -94,4 +94,4 @@ $\dot{x} = \frac{\beta \cdot f(x, v) - \gamma_x \cdot x}{h(x, v)} + \sqrt{ \frac
 
 $\dot{g} = \eta \cdot \beta \cdot f(x, v) - \gamma_g \cdot g + \sqrt{\eta \cdot \beta \cdot f(x, v) + \gamma_g \cdot g} \cdot \xi(t)$
 
-$\dot{n} = F(n) - G(n) + \sqrt{F(n) - G(n)} \cdot \xi(t) = P(n) + Q(n) \cdot \xi(t)$
+$\dot{n} = F(n) - G(n) + \sqrt{F(n) + G(n)} \cdot \xi(t) = P(n) + Q(n) \cdot \xi(t)$
